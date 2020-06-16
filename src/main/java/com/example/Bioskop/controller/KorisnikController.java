@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
@@ -41,17 +42,42 @@ public class KorisnikController {
 			return "greska.html";
 		}
 	}
-	
-	@GetMapping("/pretrazi-film")
-	public String getFilm_po_nazivu(@ModelAttribute Film film, Model model) {
-		Film filmm =this.filmService.find_by_naziv(film.getNaziv());
-		model.addAttribute("filmovi", filmm);
-		return "filmovi.html";
-	}
-	@GetMapping("/pretrazi-film-zanr")
-	public String getFilm_po_zanru(@ModelAttribute Film film, Model model) {
-		List<Film> filmList =this.filmService.find_by_zanr(film.getZanr());
-		model.addAttribute("filmovi", filmList);
-		return "filmovi.html";
+	@GetMapping("/korisnici")
+    public String getKorisnici(Model model) {
+        List<Korisnik> korisnikList = this.korisnikService.findAll();
+        model.addAttribute("korisnici", korisnikList);
+        return "korisnici.html";
+    }
+	@GetMapping("/profil/{id}")
+    public String getKorisnik(@PathVariable(name = "id") Long id, Model model) {
+    	Korisnik korisnik = this.korisnikService.findOne(id);
+    	model.addAttribute("korisnik", korisnik);
+    	return "korisnik.html";
+    }
+	@GetMapping("/add-korisnik")
+    public String addKorisnik() {
+    	//Korisnik korisnik = new Korisnik();
+    	//model.addAttribute("korisnik", korisnik);
+    	return "registar.html";
+    }
+	@PostMapping("/save-korisnik")
+    public String saveKorisnik(Korisnik korisnik) {
+		if(korisnik.getUloga().equals("gledaoc")) {
+			korisnik.setAktivan(true);
+		}
+		//korisnik.setLozinka(passwordEncoder.encode(korisnik.getLozinka()));
+    	this.korisnikService.save(korisnik);
+    	return "redirect:/korisnici";
+    }
+	@GetMapping("/delete-korisnik/{id}")
+    public String deleteKorisnik(@PathVariable(name="id")Long id) {
+    	this.korisnikService.delete(id);
+    	return "redirect:/korisnici";
+    }
+	@GetMapping("/korisnici/{uloga}")
+	public String getMenadzeri(@PathVariable(name="uloga")String uloga,Model model) {
+		List<Korisnik> menadzeri =korisnikService.findAllMenadzeri(uloga);
+		model.addAttribute("korisnici", menadzeri);
+		return "korisnici.html";
 	}
 }

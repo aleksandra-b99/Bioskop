@@ -39,51 +39,14 @@ public class AdministratorController {
 	
 	//********************za korisnike***********************
 	
-	@GetMapping("/korisnici")
-    public String getKorisnici(Model model) {
-        List<Korisnik> korisnikList = this.korisnikService.findAll();
-        model.addAttribute("korisnici", korisnikList);
-        return "korisnici.html";
-    }
-	@GetMapping("/profil/{id}")
-    public String getKorisnik(@PathVariable(name = "id") Long id, Model model) {
-    	Korisnik korisnik = this.korisnikService.findOne(id);
-    	model.addAttribute("korisnik", korisnik);
-    	return "korisnik.html";
-    }
-	@GetMapping("/add-korisnik")
-    public String addKorisnik() {
-    	//Korisnik korisnik = new Korisnik();
-    	//model.addAttribute("korisnik", korisnik);
-    	return "registar.html";
-    }
-	@PostMapping("/save-korisnik")
-    public String saveKorisnik(Korisnik korisnik) {
-		if(korisnik.getUloga().equals("gledaoc")) {
-			korisnik.setAktivan(true);
-		}
-		//korisnik.setLozinka(passwordEncoder.encode(korisnik.getLozinka()));
-    	this.korisnikService.save(korisnik);
-    	return "redirect:/korisnici";
-    }
-	@GetMapping("/delete-korisnik/{id}")
-    public String deleteKorisnik(@PathVariable(name="id")Long id) {
-    	this.korisnikService.delete(id);
-    	return "redirect:/korisnici";
-    }
-	@GetMapping("/korisnici/{uloga}")
-	public String getMenadzeri(@PathVariable(name="uloga")String uloga,Model model) {
-		List<Korisnik> menadzeri =korisnikService.findAllMenadzeri(uloga);
-		model.addAttribute("korisnici", menadzeri);
-		return "korisnici.html";
-	}
+
 	//**********************filmovi******************
-	@GetMapping("/svi_filmovi")
+	/*@GetMapping("/svi_filmovi")
 	public String getFilmovi(Model model) {
 		List<Film> filmList = this.filmService.findAll();
         model.addAttribute("filmovi", filmList);
 		return "filmovi.html";
-	}
+	}*/
 	@GetMapping("/aktiviraj-korisnika/{id}")
 	public String aktivacija(@PathVariable(name="id")Long id, Model model) {
 		Korisnik kor=korisnikService.findOne(id);

@@ -38,9 +38,9 @@
 					<td th:text="${bioskop.adresa}"></td>
 					<td th:text="${bioskop.broj_centrale}"></td>
 					<td th:text="${bioskop.e_mail}"></td>
-					<td><a th:href="${'/bioskopi/'+bioskop.id}" class="stretched-link">Pogledaj</a></td>
-					<td><a th:href="${'/bioskopi/'+bioskop.id}" class="stretched-link"><i class="fa fa-gears"></i></a></td>
-					<td><a th:href="${'/delete/' + bioskop.id}" class="stretched-link"><i class="fa fa-trash"></i></a></td>
+					<td><a th:href="${'/bioskopi/'+bioskop.id}">Pogledaj</a></td>
+					<td><a th:href="${'/bioskopi/'+bioskop.id}" ><i class="fa fa-gears"></i></a></td>
+					<td><a th:href="${'/delete/' + bioskop.id}"><i class="fa fa-trash"></i></a></td>
 				</tr>
 			</tbody>
 		</table>

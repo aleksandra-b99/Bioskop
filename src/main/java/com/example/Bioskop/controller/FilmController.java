@@ -30,4 +30,16 @@ public class FilmController {
     	model.addAttribute("film", film);
     	return "film.html";
     }
+	@GetMapping("/pretrazi-film")
+	public String getFilm_po_nazivu(@ModelAttribute Film film, Model model) {
+		Film filmm =this.filmService.find_by_naziv(film.getNaziv());
+		model.addAttribute("filmovi", filmm);
+		return "filmovi.html";
+	}
+	@GetMapping("/pretrazi-film-zanr")
+	public String getFilm_po_zanru(@ModelAttribute Film film, Model model) {
+		List<Film> filmList =this.filmService.find_by_zanr(film.getZanr());
+		model.addAttribute("filmovi", filmList);
+		return "filmovi.html";
+	}
 }
