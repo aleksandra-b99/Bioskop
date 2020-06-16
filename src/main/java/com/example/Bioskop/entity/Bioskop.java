@@ -66,22 +66,25 @@ public class Bioskop implements Serializable {
 		this.broj_centrale = broj_centrale;
 		this.e_mail = e_mail;
 	}
-	public Menadzer getMenadzer() {
-		return menadzer;
-	}
-	public void setMenadzer(Menadzer menadzer) {
-		this.menadzer = menadzer;
-	}
+	public Bioskop() {}
+	
 	@ManyToMany
 	@JoinTable(name = "filmovi_u_bioskopu",
     joinColumns = @JoinColumn(name = "bioskop_id", referencedColumnName = "id"),
     inverseJoinColumns = @JoinColumn(name = "film_id", referencedColumnName = "id"))
 	private Set<Film> filmovi=new HashSet<>();
 	
-	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	@ManyToOne( fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Menadzer menadzer;
-	//vise bioskopa kontrolise jedan menadzer
+	//jedan bioskop moze da ima vise menadzera
 	
+	public Menadzer getMenadzeri() {
+		return menadzer;
+	}
+	public void setMenadzeri(Menadzer menadzer) {
+		this.menadzer = menadzer;
+	}
+
 	@OneToMany(mappedBy = "bioskop", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Sala> sale = new HashSet<>();//u bioskopu ima vise sala
 	

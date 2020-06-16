@@ -21,7 +21,7 @@ public class Film implements Serializable {
 	@Column
 	private String trajanje;
 	@Column
-	private double srednja_ocena;
+	private Double ocena;
 	public Long getId() {
 		return id;
 	}
@@ -52,27 +52,28 @@ public class Film implements Serializable {
 	public void setTrajanje(String trajanje) {
 		this.trajanje = trajanje;
 	}
-	public double getOcena() {
-		return srednja_ocena;
+	public Double getOcena() {
+		return ocena;
 	}
-	public void setOcena(double srednja_ocena) {
-		this.srednja_ocena = srednja_ocena;
+	public void setOcena(Double srednja_ocena) {
+		this.ocena = srednja_ocena;
 	}
 	@Override
 	public String toString() {
 		return "Film [id=" + id + ", naziv=" + naziv + ", opis=" + opis + ", zanr=" + zanr + ", trajanje=" + trajanje
-				+ ", srednja_ocena=" + srednja_ocena + "]";
+				+ ", srednja_ocena=" + ocena + "]";
 	}
+	public Film() {}
 	
 	
-	public Film(Long id, String naziv, String opis, String zanr, String trajanje, double srednja_ocena) {
+	public Film(Long id, String naziv, String opis, String zanr, String trajanje, Double srednja_ocena) {
 		super();
 		this.id = id;
 		this.naziv = naziv;
 		this.opis = opis;
 		this.zanr = zanr;
 		this.trajanje = trajanje;
-		this.srednja_ocena = srednja_ocena;
+		this.ocena = srednja_ocena;
 	}
 
 

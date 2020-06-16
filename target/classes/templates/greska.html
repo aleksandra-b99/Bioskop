@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Greska!</title>
+	<meta charset="utf-8">
+	<meta charset="viewport" content="width=device-width,inicial-scale=1">
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>>
+</head>
+<body>
+	<div class="container">
+		<center>
+			<h2>Doslo je do greske</h2>
+		</center>
+		<div class="alert alert-danger">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>Niste uneli ispravno korisnicko ime i loznku ili vas status nije jos aktiviran </strong>
+		</div>
+    </div>
+    <div class="container">
+    	<center>
+    		<input onclick="location.href='/loginuj-se'" type="button" class="btn btn-info " value="Pokusaj ponovo"/>
+    	</center>
+    </div>
+</body>
+</html>

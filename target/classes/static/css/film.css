@@ -1,0 +1,11 @@
+/*body{
+	font-family: Roboto;
+	background: url(images/trakica2.jpg) no-repeat center center fixed;;
+	background-size: cover;
+}*/
+body{
+	background-color: #F0F8FF;
+}
+.jumbotron{
+	margin-top: 15px;
+}

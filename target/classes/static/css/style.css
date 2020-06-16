@@ -1,0 +1,63 @@
+body{
+	font-family: Roboto, Swiss, Verdana;
+	background-image: url("/images/pocetna.jpg");
+	background-size: cover;
+}
+.alert{
+	margin-top: 20px;
+}
+.main-section{
+	margin: 0 auto;
+	margin-top: 130px;
+	padding: 0;
+}
+.modal-content{
+	background-color: #DCDCDC;
+	margin-top: 10px;
+	margin-bottom:20px;
+}
+.form-group input{
+	margin-top: 10px;
+	height: 25px;
+	border-radius: 6px;
+	font-size: 19px;
+}
+label{
+	font-size: 20px;
+}
+
+.registar{
+	margin-top: 10px;
+	height: 25px;
+	border-radius: 6px;
+	font-size: 15px;
+}
+h1{
+	text-align: center;
+} 
+.btn{
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+.dropdown1{
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+h5{
+	margin-bottom: 0px;
+}
+.datum{
+	width: 234px;
+}
+.uloga1{
+	margin-top: 20px;
+	width: 240px;
+	height: 25px;
+	font-size: 15px;
+}
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.eot');
+  src: url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.woff') format('woff'), url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Film</title>
+	<meta charset="utf-8">
+	<meta charset="viewport" content="width=device-width,inicial-scale=1">
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" th:href="@{/css/film.css}" />
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h2 class="text-center" th:text="${film.naziv}"></h2>
+		</div>
+		<div class="row">
+			<div class="col-sm-5">
+				<h4 >Zanr: </h4><h5 th:text="${film.zanr}"></h5>
+			</div>
+			<div class="col-sm-7 text-center">
+				<span class="glyphicon glyphicon-star"></span><h4 >Ocena: </h4>
+				<h1 th:text="${#numbers.formatDecimal(film.ocena, 0, 'COMMA', 2, 'POINT')}">
+				<!--<h5 th:text="${film.srednja_ocena}"></h5>-->
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5">
+				<h4 >Opis: </h4><h5 th:text="${film.opis}"></h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5">
+				<h4 >Trajanje: </h4><h5 th:text="${film.trajanje}"></h5>
+			</div>
+			<div class="col-sm-7 text-center">
+				<img class="img-thumbnail" alt="slika" src="/images/projekcija.png">
+			</div>
+		</div>
+	</div>
+	
+
+
+</body>
+</html>

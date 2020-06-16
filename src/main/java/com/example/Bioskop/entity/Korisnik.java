@@ -5,13 +5,14 @@ import java.sql.Date;
 
 import javax.persistence.*;
 
-@MappedSuperclass
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Korisnik implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column
-	private String korisnicko_ime;
+	@Column(name="")
+	private String korisnickoIme;
 	@Column
 	private String ime;
 	@Column
@@ -19,11 +20,11 @@ public class Korisnik implements Serializable {
 	@Column
 	private String lozinka;
 	@Column
-	private String kontakt_telefon;
+	private String kontaktTelefon;
 	@Column
-	private String e_adresa;
+	private String eadresa;
 	@Column
-	private Date datum_rodjenja;
+	private Date datumRodjenja;
 	@Column
 	private String uloga;
 	@Column
@@ -35,11 +36,11 @@ public class Korisnik implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getKorisnicko_ime() {
-		return korisnicko_ime;
+	public String getKorisnickoIme() {
+		return korisnickoIme;
 	}
-	public void setKorisnicko_ime(String korisnicko_ime) {
-		this.korisnicko_ime = korisnicko_ime;
+	public void setKorisnickoIme(String korisnicko_ime) {
+		this.korisnickoIme = korisnicko_ime;
 	}
 	public String getIme() {
 		return ime;
@@ -59,23 +60,23 @@ public class Korisnik implements Serializable {
 	public void setLozinka(String lozinka) {
 		this.lozinka = lozinka;
 	}
-	public String getKontakt_telefon() {
-		return kontakt_telefon;
+	public String getKontaktTelefon() {
+		return kontaktTelefon;
 	}
-	public void setKontakt_telefon(String kontakt_telefon) {
-		this.kontakt_telefon = kontakt_telefon;
+	public void setKontaktTelefon(String kontakt_telefon) {
+		this.kontaktTelefon = kontakt_telefon;
 	}
-	public String getE_adresa() {
-		return e_adresa;
+	public String getEadresa() {
+		return eadresa;
 	}
-	public void setE_adresa(String e_adresa) {
-		this.e_adresa = e_adresa;
+	public void setEadresa(String e_adresa) {
+		this.eadresa = e_adresa;
 	}
-	public Date getDatum_rodjenja() {
-		return datum_rodjenja;
+	public Date getDatumRodjenja() {
+		return datumRodjenja;
 	}
-	public void setDatum_rodjenja(Date datum_rodjenja) {
-		this.datum_rodjenja = datum_rodjenja;
+	public void setDatumRodjenja(Date datum_rodjenja) {
+		this.datumRodjenja = datum_rodjenja;
 	}
 	public String getUloga() {
 		return uloga;
@@ -91,9 +92,24 @@ public class Korisnik implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Gledaoc [id=" + id + ", korisnicko_ime=" + korisnicko_ime + ", ime=" + ime + ", prezime=" + prezime
-				+ ", lozinka=" + lozinka + ", kontakt_telefon=" + kontakt_telefon + ", e_adresa=" + e_adresa
-				+ ", datum_rodjenja=" + datum_rodjenja + ", uloga=" + uloga + ", aktivan=" + aktivan + "]";
+		return "Gledaoc [id=" + id + ", korisnicko_ime=" + korisnickoIme + ", ime=" + ime + ", prezime=" + prezime
+				+ ", lozinka=" + lozinka + ", kontakt_telefon=" + kontaktTelefon + ", e_adresa=" + eadresa
+				+ ", datum_rodjenja=" + datumRodjenja + ", uloga=" + uloga + ", aktivan=" + aktivan + "]";
+	}
+	public Korisnik() {}
+	public Korisnik(Long id, String korisnicko_ime, String ime, String prezime, String lozinka, String kontakt_telefon,
+			String e_adresa, Date datum_rodjenja, String uloga, boolean aktivan) {
+		super();
+		this.id = id;
+		this.korisnickoIme = korisnicko_ime;
+		this.ime = ime;
+		this.prezime = prezime;
+		this.lozinka = lozinka;
+		this.kontaktTelefon = kontakt_telefon;
+		this.eadresa = e_adresa;
+		this.datumRodjenja = datum_rodjenja;
+		this.uloga = uloga;
+		this.aktivan = aktivan;
 	}
 	
 	

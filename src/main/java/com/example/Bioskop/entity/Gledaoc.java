@@ -11,6 +11,10 @@ import javax.persistence.*;
 
 @Entity
 public class Gledaoc extends Korisnik{
+	public Gledaoc(Long id, String korisnicko_ime, String ime, String prezime, String lozinka, String kontakt_telefon,
+			String e_adresa, Date datum_rodjenja, String uloga, boolean aktivan) {
+		super(id, e_adresa, e_adresa, e_adresa, e_adresa, e_adresa, e_adresa, datum_rodjenja, e_adresa, aktivan);
+	}
 	@ManyToMany
 	@JoinTable(name = "rezervisani_filmovi",
     joinColumns = @JoinColumn(name = "gledaoc_id", referencedColumnName = "id"),
