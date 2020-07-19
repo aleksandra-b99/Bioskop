@@ -7,3 +7,6 @@ table{
 	height: 25px;
 	font-size: 15px;
 }
+.cursor{
+	cursor: pointer;
+}

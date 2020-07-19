@@ -14,5 +14,5 @@ public class Repertoar implements Serializable{
 	private Bioskop bioskop;
 	@ManyToOne
 	@JoinColumn(name="terminska_lista_id")
-	private Terminska_lista terminska_lista;
+	private TerminskaLista terminska_lista;
 }

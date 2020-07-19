@@ -19,9 +19,10 @@ public class Bioskop implements Serializable {
 	@Column
 	private String adresa;
 	@Column
-	private String broj_centrale;
+	private String brojCentrale;
 	@Column
-	private String e_mail;
+	private String email;
+	////////////get/////set
 	public Long getId() {
 		return id;
 	}
@@ -40,41 +41,45 @@ public class Bioskop implements Serializable {
 	public void setAdresa(String adresa) {
 		this.adresa = adresa;
 	}
-	public String getBroj_centrale() {
-		return broj_centrale;
+	public String getBrojCentrale() {
+		return brojCentrale;
 	}
-	public void setBroj_centrale(String broj_centrale) {
-		this.broj_centrale = broj_centrale;
+	public void setBrojCentrale(String broj_centrale) {
+		this.brojCentrale = broj_centrale;
 	}
-	public String getE_mail() {
-		return e_mail;
+	public String getEmail() {
+		return email;
 	}
-	public void setE_mail(String e_mail) {
-		this.e_mail = e_mail;
+	public void setEmail(String e_mail) {
+		this.email = e_mail;
 	}
 	@Override
 	public String toString() {
-		return "Bioskop [id=" + id + ", naziv=" + naziv + ", adresa=" + adresa + ", broj_centrale=" + broj_centrale
-				+ ", e_mail=" + e_mail + "]";
+		return "Bioskop [id=" + id + ", naziv=" + naziv + ", adresa=" + adresa + ", broj_centrale=" + brojCentrale
+				+ ", e_mail=" + email + "]";
 	}
-
-	public Bioskop(Long id, String naziv, String adresa, String broj_centrale, String e_mail) {
+	
+	
+	
+	public Bioskop(String naziv, String adresa, String brojCentrale, String email, Menadzer menadzer) {
 		super();
-		this.id = id;
 		this.naziv = naziv;
 		this.adresa = adresa;
-		this.broj_centrale = broj_centrale;
-		this.e_mail = e_mail;
+		this.brojCentrale = brojCentrale;
+		this.email = email;
+		this.menadzer = menadzer;
 	}
 	public Bioskop() {}
 	
+	
+
 	@ManyToMany
 	@JoinTable(name = "filmovi_u_bioskopu",
     joinColumns = @JoinColumn(name = "bioskop_id", referencedColumnName = "id"),
     inverseJoinColumns = @JoinColumn(name = "film_id", referencedColumnName = "id"))
 	private Set<Film> filmovi=new HashSet<>();
 	
-	@ManyToOne( fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
 	private Menadzer menadzer;
 	//jedan bioskop moze da ima vise menadzera
 	
@@ -86,7 +91,14 @@ public class Bioskop implements Serializable {
 	}
 
 	@OneToMany(mappedBy = "bioskop", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Sala> sale = new HashSet<>();//u bioskopu ima vise sala
+    private List<Sala> sale = new ArrayList<>();//u bioskopu ima vise sala
+	
+	public List<Sala> getSale() {
+		return sale;
+	}
+	public void setSale(List<Sala> sale) {
+		this.sale = sale;
+	}
 	
 	
 	//dnevni raspored

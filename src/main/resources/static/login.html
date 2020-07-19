@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login page</title>
+	<meta charset="utf-8">
+	<meta charset="viewport" content="width=device-width,inicial-scale=1">
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/css/style.css" />
+	<script type="text/javascript" src="/js/login.js"></script>
+</head>
+<body>
+	<div class="modal-dialog text-center">
+		<div class="col-sm-12">
+			<div class="modal-content">
+				<h2 class="text-center">Mozete uneti svoje podatke</h2>
+				<form id="loginform" name="loginform">
+					<div class="form-group">
+					<span class=" glyphicon glyphicon-user "></span>
+					<input id="korisnickoIme" name="korisnickoIme" type="text" class="from-control" placeholder="username">
+				</div>
+				<div class="form-group">
+					<span class=" glyphicon glyphicon-eye-close "></span>
+					<input id="lozinka" name="lozinka" type="password" class="from-control" placeholder="password">
+				</div>
+				<div>
+				<button type="submit" class="btn">Log in  <span class="glyphicon glyphicon-log-in"></span></button>
+				</div>
+				<h3 class="text-center">Ako se nisi registrovao/la do sada </h3>
+				<button onclick="location.href='/registar.html'" type="button" class="btn btn-info btn-center">Registruj se</button>
+				<a href="registar.html"></a>
+				</form>
+			</div><!--end modal content-->
+			
+		</div>
+	</div>
+
+</body>
+</html>

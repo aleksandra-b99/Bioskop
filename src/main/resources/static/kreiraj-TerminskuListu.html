@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Dodavanje terminske liste</title>
+	<meta charset="utf-8">
+	<meta charset="viewport" content="width=device-width,inicial-scale=1">
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/style.css" />
+	
+	<script type="text/javascript" src="/js/kreiraj-TerminskuListu.js"></script>
+	
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.validate.min.js"></script>
+</head>
+<body>
+	<div class="modal-dialog text-center ">
+		<div class="col-sm-12">
+			<div class="modal-content">
+				<h2 class="text-center">Dodaj termisnku listu u salu: </h2>
+				<h2 id="nazivSaleTLnaslov"></h2>
+				<form >
+					<div class="form-group1">
+						<h5  >Naziv filma: </h5>
+   						<input id="nazivFilmaTL" type="text"  class="registar" placeholder="naziv">
+					</div>
+					<div class="form-group1">
+						<h5  >Zanr: </h5>
+   						<input id="zanrTL" type="text"  class="registar" placeholder="zanr">
+					</div>
+					<div class="form-group1">
+						<h5  >Opis: </h5>
+   						<input id="opisFilmaTL" type="text"  class="registar" placeholder="opis">
+					</div>
+					<div class="form-group1">
+						<h5  >Trajanje: </h5>
+   						<input id="trajanjeFilmaTL" type="text"  class="registar" placeholder="trajanje(xh i ymin)">
+					</div>
+					
+					<div class="form-group1">
+						<h5  >Cena: </h5>
+   						<input id="cenaTL" type="text"  class="registar" placeholder="cena">
+					</div>
+					
+					<div class="form-group1">
+						<h5>Dan projekcije: </h5>
+						<input id="danProjkcijeTL" type="text" class="registar" placeholder="gggg-mm-dd">
+					</div>
+					<div class="form-group1">
+						<h5>Pocetak: </h5>
+						<input id="pocetakTL" type="text" class="registar" placeholder="xh i ymin">
+					</div>
+					
+					<div>
+					<button type="submit" class="btn btn-success">Dodaj</button>
+					</div>
+				</form>
+			</div><!--end modal content-->
+		</div>
+	</div>
+
+</body>
+</html>

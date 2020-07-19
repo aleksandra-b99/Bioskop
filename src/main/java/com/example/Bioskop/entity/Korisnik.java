@@ -97,10 +97,9 @@ public class Korisnik implements Serializable {
 				+ ", datum_rodjenja=" + datumRodjenja + ", uloga=" + uloga + ", aktivan=" + aktivan + "]";
 	}
 	public Korisnik() {}
-	public Korisnik(Long id, String korisnicko_ime, String ime, String prezime, String lozinka, String kontakt_telefon,
+	public Korisnik( String korisnicko_ime, String ime, String prezime, String lozinka, String kontakt_telefon,
 			String e_adresa, Date datum_rodjenja, String uloga, boolean aktivan) {
 		super();
-		this.id = id;
 		this.korisnickoIme = korisnicko_ime;
 		this.ime = ime;
 		this.prezime = prezime;
@@ -111,7 +110,6 @@ public class Korisnik implements Serializable {
 		this.uloga = uloga;
 		this.aktivan = aktivan;
 	}
-	
 	
 	
 }

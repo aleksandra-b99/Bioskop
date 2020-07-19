@@ -13,5 +13,11 @@ public class MenadzerService {
 	@Autowired
     private MenadzerRepository menadzerRepository;
 	
+	public Menadzer findOne(Long id) {
+		return menadzerRepository.getOne(id);
+	}
+	public Menadzer findByKorisnickoIme(String korisnickoIme) {
+		return menadzerRepository.findByKorisnickoIme(korisnickoIme);
+	}
 	
 }

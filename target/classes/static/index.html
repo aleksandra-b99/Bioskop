@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Pocetna stranica</title>
+	<meta charset="utf-8">
+	<meta charset="viewport" content="width=device-width,inicial-scale=1">
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	
+	<link rel="stylesheet" href="/css/pocetna.css" />
+	<script type="text/javascript" src="/js/pretraga.js"></script>
+	<script type="text/javascript" src="/js/index.js"></script>
+	<script type="text/javascript" src="/js/korisnici.js"></script>
+	<style>
+
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+</style>
+
+</head>
+<body>
+	<header>
+		
+	</header>
+	<main>
+		<nav>
+			<ul >
+				<li><a href="index.html"> Pocetna <span class="glyphicon glyphicon-home"></span></a></li>
+                <li><a href="filmovi.html"> Filmovi <span class="glyphicon glyphicon-film"></span></a></li>
+                <li id="mojProfil" ><div > <a  href="profil.html" >Profil <span class="glyphicon glyphicon-user"></span></a></div></li>
+                <li><a id="repertoar1" href="terminskaLista.html"> Repertoar <i class="fa fa-desktop"></i></a></li>
+                <li><div id=korisniciAdmin><a href="korisnici.html">Korisnici <i class="fa fa-users"></i></a></div></li>
+				<li><div id="bioskopiMenadzer"><a href="bioskopi.html">Bioskopi <i class="fa fa-video-camera"></i></a></div></li>
+				<li><div id="bioskopiAdmin"><a href="svi-bioskopi.html">Bioskopi <i class="fa fa-video-camera"></i></a></div></li>
+				<li><div id="login"><a href="login.html"> Sign in <span class=" glyphicon glyphicon-log-in "></span></a></div></li>
+				<li><div id="logout"><a href="/"> Logout <span class=" glyphicon glyphicon-log-out "></span></a></div></li>
+				
+			</ul>
+		</nav>
+	</main>
+<!--  <div id="pretraga">
+	<div class="modal-dialog text-center">
+		<div class="col-sm-12">
+			<div class="modal-content">
+				<h2 class="text-center">Pretrazi film po zeljenom kriterijumu</h2>
+				<form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+					<input id="naziv" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Ocena" aria-label="Search">
+					<button type="submit"  class="btn btn-secondary btn-lg" ><i class="fa fa-search"></i></button>
+				</form>
+	            <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+					<input id="zanr" name="zanr" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Zanr" aria-label="Search">
+					<button type="submit"  class="btn btn-secondary btn-lg" ><i class="fa fa-search"></i></button>
+	            </form>
+	            <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+					<input name="ocena" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Ocena" aria-label="Search">
+					<button type="submit"  class="btn btn-secondary btn-lg" ><i class="fa fa-search"></i></button>
+	            </form>
+	            <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+					<input name="cena" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Cena" aria-label="Search">
+					<button type="submit"  class="btn btn-secondary btn-lg" ><i class="fa fa-search"></i></button>
+	            </form>
+	            <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+					<input name="vremeProjekcije" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="VremeProjekcije" aria-label="Search">
+					<button type="submit"  class="btn btn-secondary btn-lg" ><i class="fa fa-search"></i></button>
+	            </form>
+			</div>
+		</div>
+	</div>
+</div>-->
+	
+<div id="">
+	<div class="container">
+	<div class="row">
+		<div class="col-sm-6 text-center">
+		    <div class="jumbotron">
+				<h2 class="zoom">Pogledajte sve filmove koje pozelite</h2>
+				<h3 class="zoom">U nasoj sirokoj ponudi sigurno cete naci ono sto vam odgovara</h3>
+				<h3 class="zoom">Sirok spektar mogucnosti</h3>
+				<h3 class="zoom">Ovo je pravi mali dnevnik filmova, ako ste filmofil pronasli ste prafu stavr <i class="fa fa-pencil-square"></i></h3>
+			</div>
+		</div>
+		<div class="col-sm-6 text-center">
+			<div class="jumbotron">
+				<h3>Bilo kada mozete da: </h3>
+				<h4 class="zoom">Rezervisete kartu za zeljenu projekciju   <i class="fa fa-calendar-check-o"></i></h4>
+				<h4 class="zoom">Otkazete rezervaciju za zeljenu projekciju   <i class="fa fa-calendar-times-o"></i></h4>
+				<h4 class="zoom">Ocenite film koji ste pogledali   <i class="fa fa-pen"></i></h4>
+				<h4 class="zoom">Vidite sve filmove koje ste rezervisali   <i class="fa fa-check"></i></h4>
+				<h4 class="zoom">Vidite sve  filmove koje ste pogledali <i class="fa fa-file-video-o"></i></h4>
+				<h4 class="zoom">Vidite sve  filmove koje niste ocenili <i class="fa fa-file-text"></i></h4>
+				<h4 class="zoom">Vidite sve  filmove koje ste ocenici   <i class="fa fa-file-text"></i></h4>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="col-sm-12">
+		<div class="container">
+			<div class="jumbotron">
+				<h3 class="zoom" id="">Dobro došli na našu zvaničnu stranicu!</h3>
+				<h4 class="zoom" id="">
+Ovo je stranica koja vam omogućava najobuhvatniji pregled svih filmova I bioskopa širom Novog Sada. Nadamo se da smo u potpunosti ispunili vasa očekivanja I da će te sa lakoćom izabrati filmove, na lokaciji koja vama najviše odgovara. Uživaj te u našem sadržaju!<span class="glyphicon glyphicon-hand-up"></span> 
+			</h4>
+			</div>
+		</div>
+</div>
+</body>
+</html>

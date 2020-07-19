@@ -45,6 +45,9 @@ a{
 	font-size: 18px;
 
 }
+a span{
+	width: 100%;
+}
 nav>ul li{
 	padding: 0;
 	margin: 

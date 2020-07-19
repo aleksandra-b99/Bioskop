@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.Bioskop.entity.Bioskop;
-import com.example.Bioskop.entity.Menadzer;
 import com.example.Bioskop.repository.BioskopRepository;
 
 

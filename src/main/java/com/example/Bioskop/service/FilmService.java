@@ -30,6 +30,27 @@ public class FilmService {
 		List<Film> filmList=this.filmRepository.findByZanrIgnoreCase(zanr);
 		return filmList;
 	}
-	
+	public List<Film> findByOcena(Double ocena){
+		 List<Film> filmList=this.filmRepository.findByOcena(ocena);
+		 return filmList;
+	}
+	public Film findByNazivAndZanrAndOcena(String naziv, String zanr, Double ocena) {
+		return filmRepository.findByNazivAndZanrAndOcena(naziv, zanr, ocena);
+	}
+	public Film findByNazivAndZanr(String naziv, String zanr) {
+		return filmRepository.findByNazivAndZanr(naziv, zanr);
+	}
+	public List<Film> sortNaziv() {
+		return filmRepository.findAllByOrderByNaziv();
+	}
+	public List<Film> sortZanr() {
+		return filmRepository.findAllByOrderByZanr();
+	}
+	public List<Film> sortOcena() {
+		return filmRepository.findAllByOrderByOcenaAsc();
+	}
+	public Film findByNazivOrZanr(String naziv, String zanr) {
+		return filmRepository.findByNazivOrZanr(naziv, zanr);
+	}
 }
 	

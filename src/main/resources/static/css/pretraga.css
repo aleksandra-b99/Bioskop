@@ -1,0 +1,17 @@
+.modal-content{
+	background-color: #5F9EA0;
+	text-align: center;
+	padding: 0;
+}
+input{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.btn-sm{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 30px;
+}
+.inputi{
+	width: 590px;
+}

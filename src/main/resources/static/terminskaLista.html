@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<title>Pregled svih menadzera</title>
+	<meta charset="utf-8">
+	<meta charset="viewport" content="width=device-width,inicial-scale=1">
+
+	<!--   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="/js/terminskaLista.js"></script>
+	<link rel="stylesheet" href="/css/terminskaLista.css" />
+	<link rel="stylesheet" href="/css/rezervacija.css" />
+	<link rel="stylesheet" href="/css/pretraga.css">
+</head>
+<body>
+<div class="container">
+	<div id="jumbotron">
+		<div class="jumbotron jumbotron-fluid text-center">
+	  <div class="container">
+	    <h1 class="display-4">Repertoar</h1>
+	    <p class="lead">Pregled filmova koje ce biti moguce pogledati u narednom periodu</p>
+	    <a href="index.html"><i class='fa fa-home' style='font-size:36px'></i></a>
+	  </div>
+	</div>
+	</div>
+<div id="sveTerminskeListe">
+	<div class="container">
+		<table id="terminskeListe" class="table table-striped table-hover table-bordered ">
+			<thead class="thead">
+				<tr>
+					<th colspan="7" class="bg-info text-center">U ponudi su sledeci filmovi</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Naziv filma   <i class="fa fa-film"></i></th>
+					<th>Zanr  </th>
+					<th>Dan   <i class="fa fa-calendar"></i></th>
+					<th>Pocetak  <i class="fa fa-clock-o"></i></th>
+					<th>Cena  <i class="fa fa-money"></i></th>
+					<th>Detaljnije</th>
+					<th id="rezervisi-kolona" class="cursor">Rezervisi mesto<i class="fa fa-shopping-cart"></i></th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>
+<div id="pretraga">
+ <div class="modal-dialog text-center">
+		<div class="col-sm-12">
+			<div class="modal-content">
+				<form>
+					<h2 class="text-center">Pretrazi film po zeljenom kriterijumu</h2>
+				
+					<div class="inputi">
+						<input id="naziv1" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Naziv" aria-label="Search">
+					</div>
+					<div class="inputi">
+						<input id="cena1"  class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Cena" aria-label="Search">
+					</div>
+					<div class="inputi">
+						<input  id="pocetak1" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Pocetak (xh i ymin)  " aria-label="Search">
+					</div>
+					<div class="inputi">
+						<input  id="danProjkcije1" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Datum (gggg-mm-dd)" aria-label="Search">
+					</div>
+				<button  id="pretrazi" type="submit" class="btn btn-primary btn-lg btn-block">Pretrazi <i class="fa fa-search"></i></button>
+				</form> 
+				<button id="sortCena" type="button" class="btn btn-outline-primary">Sortiraj po ceni projekcije</button>
+				
+			</div><!--end modal content-->
+		</div>
+	</div>
+</div>
+<div id="rezervacijahtml">
+	<div class="container">
+	<div class="row">
+		<div class="col-sm-2 text-center">
+		</div>
+		<div class="col-sm-8 text-center">
+			<div class="jumbotron">
+				<h1 id="film"></h1>
+				<h2 id="zanrFilma"></h2>
+				<a href="terminskaLista.html">Repertoar</a>
+			</div>
+		</div>
+		<div class="col-sm-2 text-center">
+		</div>		
+	</div>
+	<div class="row">
+		<div class="col-sm-5 text-center">
+			<div class="jumbotron">
+				
+				<h3>Pocetak: </h3><h3 id="pocetak"></h3>
+				<h3>Datum: </h3><h3 id="datum"></h3>
+			</div>
+		</div>
+		<div class="col-sm-7 text-center">
+			<div class="jumbotron">
+				<h2>Kratak opis filma  <i class="fa fa-pencil"></i></h2>
+				<h3 id="opis"></h3>
+			</div>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-sm-3 text-center">
+			<div class="jumbotron jumb1">
+				<h3>Ocena filma  <i class="fa fa-star"></i></h3>
+				<h3 id="ocenaFilma"></h3>
+			</div>
+		</div>
+		<div class="col-sm-3 text-center">
+			<div class="jumbotron jumb1">
+				<h3>Ukupno mesta  </h3>
+				<h3 id="ukupnoMesta"></h3>
+			</div>
+		</div>
+		<div class="col-sm-3 text-center">
+			<div class="jumbotron jumb1">
+				<h3>Zauzeto</h3>
+				<h3 id="rezervisanoMesta"></h3>
+			</div>
+		</div>
+		<div class="col-sm-3 text-center">
+			<div class="jumbotron jumb1">
+				<h3>Sala </h3>
+				<h3 id="salaUkojojJeProjekcija"></h3>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="container">
+	<div id="rezervisaneProjekcije">
+		<table id="rezervisaneProjekcijetabela1" class="table table-striped table-hover table-bordered ">
+			<thead class="thead">
+				<tr>
+					<th colspan="6" class="bg-info text-center">Filmovi za koje ste rezervisali kartu</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Naziv filma   <i class="fa fa-film"></i></th>
+					<th>Zanr  </th>
+					<th>Dan   <i class="fa fa-calendar"></i></th>
+					<th>Pocetak  <i class="fa fa-clock-o"></i></th>
+					<th>Cena  <i class="fa fa-money"></i></th>
+					<th>Kupi kartu<i class="fa fa-shopping-cart"></i></th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

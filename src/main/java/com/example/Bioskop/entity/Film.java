@@ -20,8 +20,9 @@ public class Film implements Serializable {
 	private String zanr;
 	@Column
 	private String trajanje;
-	@Column
+	@Column(nullable=true)
 	private Double ocena;
+	////////////get//////////////set//////////
 	public Long getId() {
 		return id;
 	}
@@ -58,31 +59,42 @@ public class Film implements Serializable {
 	public void setOcena(Double srednja_ocena) {
 		this.ocena = srednja_ocena;
 	}
-	@Override
-	public String toString() {
-		return "Film [id=" + id + ", naziv=" + naziv + ", opis=" + opis + ", zanr=" + zanr + ", trajanje=" + trajanje
-				+ ", srednja_ocena=" + ocena + "]";
+	public List<Sala> getSale() {
+		return sale;
 	}
+	public void setSale(List<Sala> sale) {
+		this.sale = sale;
+	}
+	public List<TerminskaLista> getTerminskeListe() {
+		return terminskeListe;
+	}
+	public void setTerminskeListe(List<TerminskaLista> terminskeListe) {
+		this.terminskeListe = terminskeListe;
+	}
+	////constructors/////////
 	public Film() {}
 	
-	
-	public Film(Long id, String naziv, String opis, String zanr, String trajanje, Double srednja_ocena) {
+	public Film(String naziv, String opis, String zanr, String trajanje, Double srednja_ocena) {
 		super();
-		this.id = id;
 		this.naziv = naziv;
 		this.opis = opis;
 		this.zanr = zanr;
 		this.trajanje = trajanje;
 		this.ocena = srednja_ocena;
 	}
-
-
-	@ManyToMany(mappedBy="rezervisani_filmovi")
-	private Set<Gledaoc> zaineresovani_korisnici=new HashSet<>();
-	
+	///////dodatne veze///////////////
 	@ManyToMany ( mappedBy="filmovi_u_sali")
-	private Set<Sala> sale=new HashSet<Sala>(); //vise filmova u jednoj sali*/
+	private List<Sala> sale=new ArrayList<>(); //vise filmova u jednoj sali*/
+	
+	@OneToMany(mappedBy = "film", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<TerminskaLista> terminskeListe; 
 	
 	@ManyToMany(mappedBy="filmovi")
 	private Set<Bioskop> bioskopi=new HashSet<>();//u kojim bioskopima ce se prikazivati film
+	
+	//@ManyToMany(mappedBy="rezervisaniFilmovi")
+	//private List<Gledaoc> zaineresovaniKorisnici=new ArrayList<>();
+	
+	@ManyToMany
+	private List<Gledaoc> gledaoci=new ArrayList<>();
 }

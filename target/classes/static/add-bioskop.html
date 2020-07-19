@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<title>Dodavanje bioskopa</title>
+	<meta charset="utf-8">
+	<meta charset="viewport" content="width=device-width,inicial-scale=1">
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/style.css" />
+	
+	<script type="text/javascript" src="/js/svi-bioskopi.js"></script>
+	
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.validate.min.js"></script>
+</head>
+<body>
+	<div class="modal-dialog text-center ">
+		<div class="col-sm-12">
+			<div class="modal-content">
+				<h2 class="text-center">Dodaj bioskop</h2>
+				<form >
+					<div class="form-group1">
+						<h5 for="naziv" >Naziv:</h5>
+   						<input id="naziv" type="text"  class="registar" placeholder="Naziv">
+					</div>
+					<div class="form-group1">
+						<h5 for="adresa">Adresa:</h5>
+						<input id="adresa" type="text" class="registar" placeholder="Adresa">
+					</div>
+					<div class="form-group1">
+						<h5 for="broj">Broj telefona centrale:</h5>
+						<input id="brojCentrale"type="text" class="registar" placeholder="Broj telefona">
+					</div>
+					<div class="form-group1">
+						<h5 for="mail">E-mail:</h5>
+						<input id="email" type="text" class="registar" placeholder="E-mail">
+					</div>
+					<div class="form-group1">
+						<h5 for="idMenadzera">ID menadzera:</h5>
+						<input id="idMenadzera" type="text"class="registar"  placeholder="ID menadzera">
+					</div>
+					<!--<div class="form-group1">
+						<h5 for="ulogaa">Menadzer:</h5>
+							<select id="ulogaa" class="uloga1" name="Izaberi"   >   
+								<option value="1" th:text="${menadzer.prezime}"></option>
+	            			</select>
+					</div>-->
+					<div>
+					<button type="submit" class="btn btn-success">Dodaj</button>
+					</div>
+				</form>
+			</div><!--end modal content-->
+		</div>
+	</div>
+
+</body>
+</html>
